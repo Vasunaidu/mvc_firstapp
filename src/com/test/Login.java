@@ -9,13 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Login extends HttpServlet {
+import org.apache.log4j.Logger;
 
+public class Login extends HttpServlet {
+private Logger logger=null;
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+       logger.info("Entered into do post method");
+		response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
         String email = request.getParameter("email");
